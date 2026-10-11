@@ -9,11 +9,10 @@ The separate *Slow Momentum with Fast Reversion* paper ([2105.13727](https://arx
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -e '.[dev,wrds]'
+pip install -e '.[dev]'
 make test
 make demo
 python scripts/01_get_data.py                  # preview only; does not connect
-python scripts/01_get_data.py --inspect       # username + hidden password; schema/permission check
 ```
 
 On Enze's current Mac the ready environment is `../.venv/bin/python`; use `make demo PYTHON=../.venv/bin/python`. The Mac lock file records the actual Python 3.14 environment. This modern environment runs our research utilities, **not** the legacy TensorFlow models.
@@ -23,7 +22,7 @@ On Enze's current Mac the ready environment is `../.venv/bin/python`; use `make 
 - `vendor/trading-momentum-transformer/`: complete, unchanged author source at a pinned commit, including TFT, LSTM and GP-CPD; MIT license retained.
 - `vendor/slow-momentum-fast-reversion/`: complete, unchanged supporting author source; MIT license retained.
 - `src/momentum_lab/`: compact, commented data checks, trailing features, chronological folds, volatility-scaled exposure simulation, roll-aware costs and risk metrics.
-- `scripts/`: password-prompt WRDS access, feature export, official replication status, end-to-end baseline simulation, local course-cache importer.
+- `scripts/`: data-selection preview, feature export, official replication status, end-to-end baseline simulation, local course-cache importer.
 - `configs/`: explicit research parameters; **WRDS universe and dates are still a team decision**.
 - `docs/`: replication protocol, data access, collaboration, resource map and remaining work.
 - `resources/local/` (ignored): papers, course requirements and prior proposal available locally. Links/provenance are shared; licensed data and classroom files are not uploaded.
@@ -38,4 +37,4 @@ The baseline uses 15% per-asset risk scaling divided by the fixed asset count; t
 
 `Project/main` is branch `main`; `Project/Enze` is a linked worktree on branch `enze`. Work in the correct folder. Only `main` is authorized for GitHub upload now. Do not push all branches. Do not edit author snapshots in place; implement adapters in our own package and record differences.
 
-Read [COLLABORATION.md](docs/COLLABORATION.md) before syncing. The teammate account and final data choice remain pending. Raw data, credentials and personal resources stay outside Git regardless of repository visibility.
+Read [COLLABORATION.md](docs/COLLABORATION.md) before syncing. The teammate account and final data choice remain pending. Raw data under `Data/`, credentials and personal resources stay outside Git regardless of repository visibility. The interactive WRDS downloader is maintained only in the local Enze workspace, as requested.

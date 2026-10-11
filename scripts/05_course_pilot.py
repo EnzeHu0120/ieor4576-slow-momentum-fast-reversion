@@ -25,7 +25,7 @@ if __name__=='__main__':
     # Restriction is explicit and saved for inspection, never silently converted to zero.
     missing=panel[panel.isna().any(axis=1)]
     clean=panel.dropna(how='any');contracts=contracts.reindex(clean.index)
-    out=ROOT/'data/processed';out.mkdir(parents=True,exist_ok=True)
+    out=ROOT/'Data/processed';out.mkdir(parents=True,exist_ok=True)
     panel.to_parquet(out/'pilot_returns_with_missing.parquet');missing.to_csv(out/'missing_dates.csv')
     # Internal missing dates would turn a row-based rolling horizon into an irregular one.
     # Fail on internal gaps; initial warm-up dates can be removed safely.

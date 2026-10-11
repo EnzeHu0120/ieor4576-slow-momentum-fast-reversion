@@ -16,3 +16,4 @@ configs/*.local.*
 /resources/local/
 /resources/personal/
 *.bundle
+/Data/

@@ -11,7 +11,7 @@ if __name__=='__main__':
     g.add_argument('--demo',action='store_true');g.add_argument('--returns',type=Path)
     a=p.parse_args();r=synthetic_returns() if a.demo else load_returns(a.returns)
     if r.isna().any().any(): raise ValueError('Feature export requires an audited complete panel; no silent fill')
-    out=ROOT/'data/processed';out.mkdir(parents=True,exist_ok=True)
+    out=ROOT/'Data/processed';out.mkdir(parents=True,exist_ok=True)
     f=model_features(r);f.to_parquet(out/'features.parquet')
     f.drop(columns='label_date').to_csv(out/'author_features_non_cpd.csv')
     r.to_parquet(out/'returns.parquet')

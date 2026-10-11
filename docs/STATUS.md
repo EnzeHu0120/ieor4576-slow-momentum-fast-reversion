@@ -1,6 +1,6 @@
 # Initialization status — 2026-10-11
 
-Implemented and checked: pinned complete author source; separate modern research environment; password-prompt, config-driven WRDS access (preview checked; live auth not run); data contracts; past-only features; explicit fold/label purge; TSMOM exposure/cost engine; roll costs; synthetic end-to-end output; tests of timing, future perturbation, fees, missing held returns and contract returns.
+Implemented and checked: pinned complete author source; separate modern research environment; shared data-selection preview (personal WRDS download interface belongs only to local Enze); data contracts; past-only features; explicit fold/label purge; TSMOM exposure/cost engine; roll costs; synthetic end-to-end output; tests of timing, future perturbation, fees, missing held returns and contract returns.
 
 Not yet completed: team data decision; exact Pinnacle dataset; live WRDS access; compatible author TF/GPflow training environment; LSTM/TFT fitting; CPD runs; paper tables; fitted-model robustness; actual broker execution or realized costs. The proposal is a planning artifact, not evidence these steps have happened.
 

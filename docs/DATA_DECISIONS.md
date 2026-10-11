@@ -2,7 +2,7 @@
 
 No new WRDS history has been requested. The user will enter the password locally. The downloader uses a read-only SSL PostgreSQL connection; it does not save the password, create .pgpass, or put credentials on the command line.
 
-Run `python scripts/01_get_data.py` to preview the empty template. `--inspect` connects only to inspect two Datastream tables and check SELECT access. After jointly agreeing data, copy the JSON to `configs/wrds_selection.local.json`, select contrcode IDs (not ambiguous tickers), ISO start/end dates and fields, and set `decision_status` to `agreed_by_team`. Run `--config ... --download`. Every run creates a new dated raw snapshot and closes the connection on error. Endpoints/fields were checked against existing course downloader source; actual live permissions still require the user's login and are untested here.
+Run `python scripts/01_get_data.py` to preview the empty shared template. Personal WRDS authentication/downloading is implemented only in the local Enze workspace (`scripts/wrds_download.py`), including a hidden password prompt, symbol/contrcode selection, date range, catalogue lookup and dated snapshots under `Enze/Data`. The shared main repository contains no personal authentication defaults. Actual live WRDS permissions remain untested until the user runs the downloader. Source tables/fields were checked against existing course source; credentials and raw data are never uploaded.
 
 | Candidate | Access/evidence | Use and open issue |
 |---|---|---|
