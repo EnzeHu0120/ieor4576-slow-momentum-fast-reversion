@@ -24,7 +24,7 @@ def continuous_contract_returns(bars, metadata, roll_days=5):
     price=p.pivot(index='date',columns='futcode',values='settlement').sort_index()
     oi=p.pivot(index='date',columns='futcode',values='oi').reindex_like(price)
     columns=[x for x in price if x in safe.index]
-    price=price[columns];oi=oi[columns]
+    price=price[columns].astype(float);oi=oi[columns].astype(float)
     if not columns: raise ValueError('No contracts with usable vendor expiry metadata')
     days=pd.Series(price.index,index=price.index)
     eligibility=price.notna() & oi.shift(1).gt(0)
