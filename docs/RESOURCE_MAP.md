@@ -8,7 +8,7 @@ The Enze worktree adds an ignored `resources/personal/` collection:
 - original classroom materials from “data-driven approaches used in modern finance”;
 - selected IEORE4576 Week 1–4 resources and notebook source cells, with outputs removed;
 - existing ten-series raw futures cache copied into project-owned data storage, leaving old assignments untouched;
-- RegimeDetection source/docs/reports and a link to the original large CSV folder; no environment/build/caches copied.
+- RegimeDetection source/docs/reports for methods only; its old datasets are excluded per user instruction. No environment/build/caches copied.
 
 Relevant concepts: futures roll construction and negative prices (Weeks 1–2); WRDS metadata and data provenance (Weeks 2–3); continuous futures returns (Week 3, independently rebuilt for this pilot); parquet/session handling/IC and mutual information (Week 4). CRSP equities, COT reports and Nasdaq ITCH do not substitute for the daily diversified futures panel. Heavy ITCH data, S3 credentials, browser cookies and temporary work folders are excluded.
 

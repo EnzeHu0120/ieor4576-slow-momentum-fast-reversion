@@ -11,7 +11,7 @@ Run `python scripts/01_get_data.py` to preview the empty template. `--inspect` c
 | Course raw cache | Ten series, bars about Dec 2009–Dec 2025, mostly settlement+OI | Local pilot only; replace same-day selection/full-history liquidity filters with an auditable causal rule |
 | Author CHRIS/Quandl example | README points to Nasdaq Data Link and 100 tickers | Current API entitlement/continuity not verified; do not assume the historical “free” README claim still works |
 | CFTC COT | Weekly positioning data | Not daily settlement prices; any future use needs actual release dates and publication lag |
-| Regime Detection high-frequency CSVs | Five large files locally; provider/roll/timezone not yet established | Personal reference only until provenance/session/contract transitions are audited |
+| Regime study data | WRDS selection pending | Reuse Regime Detection methods only; its old datasets are explicitly excluded by user instruction |
 | IBKR | TWS/Gateway/API permissions and market subscriptions required | Recent read-only validation / later paper workflow; not a substitute for 1990–2020 futures archive |
 
 ## Decide together before download

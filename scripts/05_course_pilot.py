@@ -25,12 +25,12 @@ if __name__=='__main__':
     # Restriction is explicit and saved for inspection, never silently converted to zero.
     missing=panel[panel.isna().any(axis=1)]
     clean=panel.dropna(how='any');contracts=contracts.reindex(clean.index)
+    out=ROOT/'data/processed';out.mkdir(parents=True,exist_ok=True)
+    panel.to_parquet(out/'pilot_returns_with_missing.parquet');missing.to_csv(out/'missing_dates.csv')
     # Internal missing dates would turn a row-based rolling horizon into an irregular one.
     # Fail on internal gaps; initial warm-up dates can be removed safely.
     if len(clean) and missing.index.to_series().between(clean.index.min(),clean.index.max()).any():
         raise ValueError(f'Internal incomplete dates: {len(missing)}; inspect series before choosing universe')
-    out=ROOT/'data/processed';out.mkdir(parents=True,exist_ok=True)
-    panel.to_parquet(out/'pilot_returns_with_missing.parquet');missing.to_csv(out/'missing_dates.csv')
     clean.to_parquet(out/'pilot_returns.parquet');contracts.to_parquet(out/'pilot_contracts.parquet')
     (out/'course_manifest.json').write_text(json.dumps({'status':'substitute_data_pilot_only',
         'source':'existing WRDS trdstrm course cache; not a new WRDS download',
