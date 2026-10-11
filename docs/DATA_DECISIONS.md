@@ -1,32 +1,15 @@
-# Data choices — pending team discussion
+# Data selection — paper #67 CPD-LSTM futures replication
 
-No new WRDS history has been requested. The user will enter the password locally. The downloader uses a read-only SSL PostgreSQL connection; it does not save the password, create .pgpass, or put credentials on the command line.
+The correct selected paper is Wood, Roberts & Zohren (2022), *Slow Momentum with Fast Reversion*, arXiv:2105.13727, not the Momentum Transformer (#68). The paper uses 50 **Pinnacle CLC** continuous futures (1990–2020), not provided in the official GitHub repository.
 
-Run `python scripts/01_get_data.py` to preview the empty shared template. Personal WRDS authentication/downloading is implemented only in the local Enze workspace (`scripts/wrds_download.py`), including a hidden password prompt, symbol/contrcode selection, date range, catalogue lookup and dated snapshots under `Enze/Data`. The shared main repository contains no personal authentication defaults. Actual live WRDS permissions remain untested until the user runs the downloader. Source tables/fields were checked against existing course source; credentials and raw data are never uploaded.
+## Current WRDS evidence and decisions
 
-| Candidate | Access/evidence | Use and open issue |
-|---|---|---|
-| Pinnacle CLC | Commercial source in #67; no dataset bundled | Best fidelity if licensed 50-series history available; confirm purchase/access/roll adjustments first |
-| WRDS Datastream `trdstrm.wrds_contract_info`, `wrds_fut_contract` | Course `futspread` source and existing ten-series daily cache | Most practical starting candidate; username alone does not establish current institutional entitlement or permitted redistribution |
-| Course raw cache | Ten series, bars about Dec 2009–Dec 2025, mostly settlement+OI | Local pilot only; replace same-day selection/full-history liquidity filters with an auditable causal rule |
-| Author CHRIS/Quandl example | README points to Nasdaq Data Link and 100 tickers | Current API entitlement/continuity not verified; do not assume the historical “free” README claim still works |
-| CFTC COT | Weekly positioning data | Not daily settlement prices; any future use needs actual release dates and publication lag |
-| Regime study data | WRDS selection pending | Reuse Regime Detection methods only; its old datasets are explicitly excluded by user instruction |
-| IBKR | TWS/Gateway/API permissions and market subscriptions required | Recent read-only validation / later paper workflow; not a substitute for 1990–2020 futures archive |
+Team's initial plan reports daily **LSEG Datastream via WRDS**, aiming for 2010–2025: E-mini S&P 500 continuous **excess-return index ISMCS04** (4,033 observations), plus identifiers and last-trading dates for **64 quarterly futures expirations**. Verify these counts, continuous-index conventions and actual timestamp availability before fitting. Existing local course cache has ten futures series but is not the published 50-futures panel. Expand to stock-index, rates, FX and commodity futures only with verified comparable daily histories.
 
-## Decide together before download
+**Distinguish:** continuous excess-return index ratio changes vs contract-level future settlement P&L. Expiration metadata is helpful for auditing rolls but not sufficient to reconstruct fillable futures returns. Avoid double counting an index's embedded roll mechanics and standalone contract-roll costs. For nonpositive futures prices (e.g., WTI in 2020), percentage returns may be invalid: use audited dollar P&L with contract multipliers or disclose exclusions. Verify currency, point value, dates, series revisions, stale prices, missing sessions, ex-ante universe selection, no backfilling and any causal roll dates.
 
-- Fidelity target: original Pinnacle panel, or explicitly disclosed WRDS adaptation?
-- Core universe and contrcodes; diversity across CM/EQ/FI/FX; USD units, delivery cutoffs and contract size.
-- Longest defensible training history and an untouched test period. Pilot decade is not the final universe.
-- Settlement/open/high/low/volume/OI, metadata, corporate/contract specification changes, historical holidays.
-- Roll convention: fixed calendar versus lagged volume/OI, dates known at decision time, delivery exposure.
-- Nonpositive price handling: contract-dollar P&L rather than naive percentage returns, especially CL in 2020.
-- Storage, university rights and cost: licensed raw data remain local and untracked.
+## Data access and storage
 
-Public primary-source references checked 2026-10-11:
-- [WRDS Datastream guide](https://wrds-www.wharton.upenn.edu/documents/1537/Thomson_Refinitiv_Datastream_and_ESG.pdf)
-- [Pinnacle CLC](https://pinnacledata2.com/clc.html)
-- [Official author repository](https://github.com/kieranjwood/trading-momentum-transformer)
-- [CFTC historical reports](https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm)
-- [IBKR futures API rules](https://www.interactivebrokers.com/docs/tws-api/contracts/futures): continuous futures are historical-only, cannot place orders, require empty endDateTime; expired futures historical access is limited to two years after expiry.
+The personal interactive WRDS username/password workflow remains in the local Enze worktree; **shared main has only `scripts/01_get_data.py` preview**, and no login secrets/vendor data. The local `scripts/05_course_pilot.py` imports preexisting vetted contract data. Do not redistribute WRDS history under academic license. Other potential data sources (original Pinnacle, old Nasdaq Data Link CHRIS example, IBKR API) are alternatives **only after entitlement/coverage verification**.
+
+Freeze jointly: exact tickers and contract codes, dates/quality, historical eligibility, index vs contract meaning, lag/execution convention, 60-day EWMA risk scaling, CPD 21/63 windows, 2010–2016 train / 2017–2018 validation / 2019–2020 primary OOS and separate potential 2021–2025 holdout, and one-way 0/1/2/3/5 bps cost stress scenarios. Any substitute dataset is labeled **partial/methodological replication**.
