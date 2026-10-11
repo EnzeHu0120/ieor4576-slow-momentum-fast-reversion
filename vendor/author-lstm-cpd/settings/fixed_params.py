@@ -1,6 +1,6 @@
 MODLE_PARAMS = {
-    "architecture": "TFT",
-    "total_time_steps": 252,
+    "architecture": "LSTM",
+    "total_time_steps": 63,
     "early_stopping_patience": 25,
     "multiprocessing_workers": 32,
     "num_epochs": 300,

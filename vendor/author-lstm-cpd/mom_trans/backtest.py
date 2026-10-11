@@ -12,7 +12,6 @@ import json
 
 from mom_trans.model_inputs import ModelFeatures
 from mom_trans.deep_momentum_network import LstmDeepMomentumNetworkModel
-from mom_trans.momentum_transformer import TftDeepMomentumNetworkModel
 from mom_trans.classical_strategies import (
     VOL_TARGET,
     calc_performance_metrics,
@@ -405,7 +404,7 @@ def run_single_window(
         changepoint_lbws=changepoint_lbws,
         split_tickers_individually=params["split_tickers_individually"],
         train_valid_ratio=params["train_valid_ratio"],
-        add_ticker_as_static=(params["architecture"] == "TFT"),
+        add_ticker_as_static=False,
         time_features=params["time_features"],
         lags=params["force_output_sharpe_length"],
         asset_class_dictionary=asset_class_dictionary,
@@ -420,20 +419,6 @@ def run_single_window(
             hp_minibatch_size,
             **params,
             **model_features.input_params,
-        )
-    elif params["architecture"] == "TFT":
-        dmn = TftDeepMomentumNetworkModel(
-            experiment_name,
-            hp_directory,
-            hp_minibatch_size,
-            **params,
-            **model_features.input_params,
-            **{
-                "column_definition": model_features.get_column_definition(),
-                "num_encoder_steps": 0,  # TODO artefact
-                "stack_size": 1,
-                "num_heads": 4,  # TODO to fixed params
-            },
         )
     else:
         dmn = None

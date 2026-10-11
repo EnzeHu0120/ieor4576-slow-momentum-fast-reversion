@@ -1,6 +1,6 @@
 # Slow Momentum with Fast Reversion — Project #67
 
-**Correct selected paper:** Wood, Roberts & Zohren (2022), [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/abs/2105.13727). Group: Enze Hu (eh3203), Jinrui Hu (jh5260). 
+**Selected paper:** Wood, Roberts & Zohren (2022), [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/abs/2105.13727). Group: Enze Hu (eh3203), Jinrui Hu (jh5260).
 
 ## Research goal
 
@@ -17,8 +17,8 @@ The original paper used 50 Pinnacle CLC continuous futures, 1990–2020. Our fea
 - `scripts/02_build_dataset.py` — export past-only features, separate labels.
 - `scripts/03_replicate.py` — paper #67 LSTM / LSTM+CPD readiness checker (**not fitted training**).
 - `scripts/04_backtest.py`, `05_course_pilot.py` — synthetic and local futures cache runs, risk/cost audit.
-- `vendor/slow-momentum-fast-reversion/` — unchanged author GP-CPD / classical strategies (MIT).
-- `vendor/trading-momentum-transformer/` — unchanged **supporting author LSTM/DMN/CPD implementation**; the Transformer architecture itself is out of scope. Preserve attribution/official source hashes.
+- `vendor/slow-momentum-fast-reversion/` — author GP-CPD / classical strategies; locally scoped README (MIT).
+- `vendor/author-lstm-cpd/` — **supporting author LSTM/DMN/CPD implementation**, scoped to the three LSTM experiments. Preserve MIT attribution and source hashes.
 - `docs/REPLICATION.md`, `docs/DATA_DECISIONS.md`, `docs/STATUS.md`, `docs/INITIAL_PROPOSAL.md` — accurate technical protocol, data caveats, project progress, assignment proposal.
 
 ## Run portable pipeline checks
@@ -34,4 +34,4 @@ python scripts/03_replicate.py --model LSTM-CPD-21
 
 **Honest status:** Previous synthetic sanity checks and futures-data utilities exist, but no actual GP-CPD features, LSTM training, reproduced published Sharpe or cost-aware neural strategy is complete. Author TensorFlow 2.3.1 / GPflow 2.2.1 need an isolated compatibility environment; modern Mac Python 3.14 is not a verified training setup. The paper's published pre-cost Sharpe **1.62 vs 2.16** is not our result.
 
-Keep raw WRDS data, credentials and personal files out of Git. Backup of prior main: `backup-before-paper67-correction-20261011`. The existing GitHub repository *URL slug* may still reflect its old wrong name until the owner renames it in Settings.
+Keep raw WRDS data, credentials and personal files out of Git. Backup of prior main: `backup-before-paper67-correction-20261011`. Repository: https://github.com/EnzeHu0120/ieor4576-slow-momentum-fast-reversion.

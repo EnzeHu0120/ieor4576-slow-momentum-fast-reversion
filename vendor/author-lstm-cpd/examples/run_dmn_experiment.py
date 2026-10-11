@@ -38,26 +38,6 @@ def main(
         architecture = "LSTM"
         lstm_time_steps = 63
         changepoint_lbws = [63]
-    elif experiment == "TFT":
-        architecture = "TFT"
-        lstm_time_steps = 252
-        changepoint_lbws = None
-    elif experiment == "TFT-CPD-126-21":
-        architecture = "TFT"
-        lstm_time_steps = 252
-        changepoint_lbws = [126, 21]
-    elif experiment == "TFT-SHORT":
-        architecture = "TFT"
-        lstm_time_steps = 63
-        changepoint_lbws = None
-    elif experiment == "TFT-SHORT-CPD-21":
-        architecture = "TFT"
-        lstm_time_steps = 63
-        changepoint_lbws = [21]
-    elif experiment == "TFT-SHORT-CPD-63":
-        architecture = "TFT"
-        lstm_time_steps = 63
-        changepoint_lbws = [63]
     else:
         raise BaseException("Invalid experiment.")
 
@@ -133,16 +113,11 @@ if __name__ == "__main__":
             metavar="c",
             type=str,
             nargs="?",
-            default="TFT-CPD-126-21",
+            default="LSTM-CPD-21",
             choices=[
                 "LSTM",
                 "LSTM-CPD-21",
                 "LSTM-CPD-63",
-                "TFT",
-                "TFT-CPD-126-21",
-                "TFT-SHORT",
-                "TFT-SHORT-CPD-21",
-                "TFT-SHORT-CPD-63",
             ],
             help="Input folder for CPD outputs.",
         )

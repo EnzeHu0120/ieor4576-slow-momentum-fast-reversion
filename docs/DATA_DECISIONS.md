@@ -1,6 +1,6 @@
 # Data selection — paper #67 CPD-LSTM futures replication
 
-The correct selected paper is Wood, Roberts & Zohren (2022), *Slow Momentum with Fast Reversion*, arXiv:2105.13727, not the Momentum Transformer (#68). The paper uses 50 **Pinnacle CLC** continuous futures (1990–2020), not provided in the official GitHub repository.
+The correct selected paper is Wood, Roberts & Zohren (2022), *Slow Momentum with Fast Reversion*, arXiv:2105.13727. The paper uses 50 **Pinnacle CLC** continuous futures (1990–2020), not provided in the official GitHub repository.
 
 ## Current WRDS evidence and decisions
 

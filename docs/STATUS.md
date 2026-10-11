@@ -1,6 +1,6 @@
-# Status — corrected paper #67, 2026-10-11
+# Status — paper #67, 2026-10-11
 
-**Correct selected study:** Wood, Roberts & Zohren (2022), *Slow Momentum with Fast Reversion*, arXiv:2105.13727. Old incorrect #68 framing is preserved in rollback branch `backup-before-paper67-correction-20261011`.
+**Selected study:** Wood, Roberts & Zohren (2022), *Slow Momentum with Fast Reversion*, arXiv:2105.13727. History is preserved in backup branch `backup-before-paper67-correction-20261011`.
 
 **Previously built and reusable:** pinned author GP-CPD + supporting LSTM code snapshots, futures contract expiry and local WRDS-cache input adapters, past-only momentum/MACD features, purged time splits, TSMOM risk/cost backtests, roll legs, and synthetic tests. Interactive authenticated WRDS downloader remains only in Enze's local branch; raw licensed data/credentials are NOT in main.
 
