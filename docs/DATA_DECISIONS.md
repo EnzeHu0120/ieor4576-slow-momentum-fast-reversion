@@ -1,0 +1,32 @@
+# Data choices — pending team discussion
+
+No new WRDS history has been requested. The user will enter the password locally. The downloader uses a read-only SSL PostgreSQL connection; it does not save the password, create .pgpass, or put credentials on the command line.
+
+Run `python scripts/01_get_data.py` to preview the empty template. `--inspect` connects only to inspect two Datastream tables and check SELECT access. After jointly agreeing data, copy the JSON to `configs/wrds_selection.local.json`, select contrcode IDs (not ambiguous tickers), ISO start/end dates and fields, and set `decision_status` to `agreed_by_team`. Run `--config ... --download`. Every run creates a new dated raw snapshot and closes the connection on error. Endpoints/fields were checked against existing course downloader source; actual live permissions still require the user's login and are untested here.
+
+| Candidate | Access/evidence | Use and open issue |
+|---|---|---|
+| Pinnacle CLC | Commercial source in #67; no dataset bundled | Best fidelity if licensed 50-series history available; confirm purchase/access/roll adjustments first |
+| WRDS Datastream `trdstrm.wrds_contract_info`, `wrds_fut_contract` | Course `futspread` source and existing ten-series daily cache | Most practical starting candidate; username alone does not establish current institutional entitlement or permitted redistribution |
+| Course raw cache | Ten series, bars about Dec 2009–Dec 2025, mostly settlement+OI | Local pilot only; replace same-day selection/full-history liquidity filters with an auditable causal rule |
+| Author CHRIS/Quandl example | README points to Nasdaq Data Link and 100 tickers | Current API entitlement/continuity not verified; do not assume the historical “free” README claim still works |
+| CFTC COT | Weekly positioning data | Not daily settlement prices; any future use needs actual release dates and publication lag |
+| Regime Detection high-frequency CSVs | Five large files locally; provider/roll/timezone not yet established | Personal reference only until provenance/session/contract transitions are audited |
+| IBKR | TWS/Gateway/API permissions and market subscriptions required | Recent read-only validation / later paper workflow; not a substitute for 1990–2020 futures archive |
+
+## Decide together before download
+
+- Fidelity target: original Pinnacle panel, or explicitly disclosed WRDS adaptation?
+- Core universe and contrcodes; diversity across CM/EQ/FI/FX; USD units, delivery cutoffs and contract size.
+- Longest defensible training history and an untouched test period. Pilot decade is not the final universe.
+- Settlement/open/high/low/volume/OI, metadata, corporate/contract specification changes, historical holidays.
+- Roll convention: fixed calendar versus lagged volume/OI, dates known at decision time, delivery exposure.
+- Nonpositive price handling: contract-dollar P&L rather than naive percentage returns, especially CL in 2020.
+- Storage, university rights and cost: licensed raw data remain local and untracked.
+
+Public primary-source references checked 2026-10-11:
+- [WRDS Datastream guide](https://wrds-www.wharton.upenn.edu/documents/1537/Thomson_Refinitiv_Datastream_and_ESG.pdf)
+- [Pinnacle CLC](https://pinnacledata2.com/clc.html)
+- [Official author repository](https://github.com/kieranjwood/trading-momentum-transformer)
+- [CFTC historical reports](https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm)
+- [IBKR futures API rules](https://www.interactivebrokers.com/docs/tws-api/contracts/futures): continuous futures are historical-only, cannot place orders, require empty endDateTime; expired futures historical access is limited to two years after expiry.

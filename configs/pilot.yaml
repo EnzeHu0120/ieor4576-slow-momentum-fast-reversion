@@ -1,0 +1,6 @@
+# Plumbing defaults; these are not a final team data/universe decision.
+lookback: 252
+execution_lag: 2
+cost_bps: [0, 0.5, 1, 2, 3, 5]
+target_vol: 0.15
+max_asset_exposure: 2.0
