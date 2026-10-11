@@ -2,7 +2,7 @@
 
 Shared `main` owns the agreed baseline, unchanged author snapshots, reproducible source, configs and protocol. Each person develops in a separate branch. On this Mac, `main/` and `Enze/` are two worktrees sharing one Git history; edits in Enze do not alter main files.
 
-Only main is uploaded initially. The teammate's GitHub username has not been supplied and no invitation is sent yet. No personal Enze branch, class archives, credentials, large tick data or vendor data is uploaded.
+Only main is uploaded initially. The teammate's GitHub username and invitation acceptance have not been confirmed here. Do not infer GitHub access from Columbia UNI. No personal Enze branch, class archives, credentials, large tick data or vendor data is uploaded.
 
 Typical personal workflow:
 
