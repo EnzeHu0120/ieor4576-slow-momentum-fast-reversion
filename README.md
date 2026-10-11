@@ -1,6 +1,6 @@
 # Slow Momentum with Fast Reversion — Project #67
 
-**Correct selected paper:** Wood, Roberts & Zohren (2022), [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/abs/2105.13727). Group: Enze Hu (eh3203), Jinrui Hu (jh5260). The separate **Momentum Transformer** paper is catalog #68, **not** our selected paper.
+**Correct selected paper:** Wood, Roberts & Zohren (2022), [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/abs/2105.13727). Group: Enze Hu (eh3203), Jinrui Hu (jh5260). 
 
 ## Research goal
 
