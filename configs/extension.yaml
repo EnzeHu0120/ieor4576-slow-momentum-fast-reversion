@@ -1,0 +1,6 @@
+exposure_cap_per_instrument: 2.0
+signal_delay_sessions: 1
+cost_units: one_way_basis_points_of_traded_notional
+roll_costs: both_contract_legs
+raw_returns: un_winsorized_same_contract
+cost_aware_retraining: false

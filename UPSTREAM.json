@@ -419,5 +419,16 @@
       "adaptation": "Scoped README; GP-CPD Python sources unchanged."
     }
   ],
-  "local_adaptation_date": "2026-10-11"
+  "local_adaptation_date": "2026-10-11",
+  "local_execution": {
+    "paper": "2105.13727v3",
+    "profile": "configs/config.yaml",
+    "features": "Execute preserved author functions with pandas compatibility edits; no empyrical import needed for features.",
+    "gp_cpd": "Exact GP covariance from author implementation, evaluated via a mathematically equivalent Numba state-space likelihood and SciPy L-BFGS-B. Log parameter bounds, numerical central-difference gradient and 1e-8 jitter are disclosed.",
+    "lstm": "CPU/Metal/CUDA PyTorch port of author LSTM/Sharpe loss: stateless, input/output dropout, per-parameter clipnorm, single effective trainable bias, max-norm output weights. Structured epoch telemetry only adds observability.",
+    "validation": "Pooled asset-time Sharpe from original equation 14; later supporting repository defaults to diversified portfolio validation Sharpe.",
+    "attribution": "Preserve vendor MIT licenses; no Transformer architecture is used.",
+    "classical_macd": "Mean of author normalized MACD trend estimates passed through the author scale_signal position map, following the foundational DMN reference equation (7).",
+    "search": "50 distinct candidates from the full paper grid per model/window. Fresh mode trains every candidate from random initialization; resume mode only reuses compatible completed candidates."
+  }
 }

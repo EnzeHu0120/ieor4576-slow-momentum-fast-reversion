@@ -1,1 +1,1 @@
-"""Causal research utilities for course paper #67; upstream models live in vendor/."""
+"""Original-study LSTM / GP-CPD replication, with preserved author source in vendor/."""

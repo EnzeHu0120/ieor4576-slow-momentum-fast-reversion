@@ -1,8 +1,0 @@
-{
-  "decision_status": "pending_team_decision",
-  "start": null,
-  "end": null,
-  "series": [],
-  "price_fields": ["settlement", "open", "high", "low", "volume", "oi"],
-  "note": "Select Datastream contrcode IDs and dates together before downloading. Prices are USD-quoted in the initial adapter; inspect currencies and units."
-}
