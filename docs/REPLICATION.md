@@ -1,4 +1,5 @@
-# Executed protocol — arXiv:2105.13727v3
+# Executed protocol: PyTorch / SciPy-Numba port
+
 
 1. Acquire the 50-entry Appendix A mapping in `configs/universe.csv`, 1990-01-01 through 2020-12-31, using WRDS individual futures contracts. Preserve raw settlements and manifests. Calendar references for GI/ZW/ZZ use the same underlying and delivery month, not final observed dates.
 2. Select the earliest maturity with an observed positive settlement, five business days before notice/last trade. Earn the same contract's next-interval price change. Historical volume/OI absence does not delete valid settlements. Mark missing settlements causally at their last observation and count them explicitly.

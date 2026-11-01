@@ -45,3 +45,6 @@ GP-CPD feature construction uses CPU and can take much longer than model fitting
 ## Phase 1 completion evidence
 
 The full study requires 36 completed model/window searches, 50 fitted candidates each (1,800 total), and all five GP feature panels. The run generates actual Exhibits 3/4, transaction-cost tables, figures, comparison and report. `report/execution_manifest.json` records actual completion counts and data/configuration hashes. This branch contains the implementation and runnable notebook, not a claim that the fresh full experiment has already completed.
+
+
+Submission default: the final notebook displays committed aggregate results without training. Set RUN_REPRODUCTION=True explicitly to start a new data/model run. The submitted completed results are a PyTorch / SciPy-Numba port.

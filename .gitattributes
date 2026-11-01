@@ -1,0 +1,5 @@
+*.pdf binary
+*.png binary
+report/figures/** binary
+# Preserve exact aggregate artifact bytes referenced by the SHA-256 manifest.
+report/tables/** -text

@@ -1,0 +1,102 @@
+{
+  "paper": "2105.13727v3",
+  "generated_utc": "2026-10-31T22:50:46.276619+00:00",
+  "config": {
+    "paper": "arxiv:2105.13727v3",
+    "start": "1990-01-01",
+    "end": "2020-12-31",
+    "seed": 67,
+    "target_volatility": 0.15,
+    "vol_span": 60,
+    "sequence_length": 63,
+    "train_fraction": 0.9,
+    "test_boundaries": [
+      1995,
+      2000,
+      2005,
+      2010,
+      2015,
+      2020
+    ],
+    "last_test_end": 2021,
+    "cpd_windows": [
+      10,
+      21,
+      63,
+      126,
+      252
+    ],
+    "cpd_maxiter": 200,
+    "workers": 6,
+    "roll_business_days": 5,
+    "max_epochs": 300,
+    "patience": 25,
+    "random_search_trials": 50,
+    "published_random_search_trials": 50,
+    "validation_objective": "pooled_sharpe",
+    "hidden_sizes": [
+      5,
+      10,
+      20,
+      40,
+      80,
+      160
+    ],
+    "dropouts": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "batch_sizes": [
+      64,
+      128,
+      256
+    ],
+    "learning_rates": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "gradient_norms": [
+      0.01,
+      1.0,
+      100.0
+    ],
+    "cost_bps": [
+      0,
+      0.5,
+      1,
+      2,
+      2.5,
+      3,
+      5
+    ],
+    "cpd_backend": "scipy_exact",
+    "model_backend": "pytorch_author_port",
+    "profile": "paper_search_budget",
+    "device": "auto"
+  },
+  "completed_experiments": 36,
+  "expected_experiments": 36,
+  "missing_experiments": [],
+  "completed_trials": 1800,
+  "completed_epochs": 126763,
+  "cpd_daily_rows": {
+    "10": 346218,
+    "21": 346218,
+    "63": 346218,
+    "126": 346218,
+    "252": 346218
+  },
+  "hashes": {
+    "configs\\config.yaml": "6870a85006fdf7dc432f8f1830fe7ae9b33d053ddbd1616252cc47125dbf7cab",
+    "configs\\universe.csv": "ee036776cd551c42e58fb8c4c3a712ed27f4061a3716399e6e8d5d6d145d1689",
+    "configs\\extension.yaml": "7bb2af25bbb968b3a84a4ba19e1ac20fa9c865057f22e2b7d0c5517d01a4291c",
+    "data\\processed\\features.parquet": "8c12b3a86b8e61810f17a8fe5bf7b2eedb37fab2861ea9a8000823944ca376ce"
+  },
+  "numerical_replication": "WRDS data adaptation; 50 random-search trials versus the published 50; PyTorch/Numba ports",
+  "synthetic_results": false
+}

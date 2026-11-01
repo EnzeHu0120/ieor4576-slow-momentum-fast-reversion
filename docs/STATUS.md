@@ -1,9 +1,12 @@
-# Phase 1 status
+# Completed experiment status
 
-The real WRDS data pipeline, original feature construction, exact daily GP-CPD port, LSTM / CPD-LSTM searches, expanding-window backtest, evaluation, costs and report generators are implemented. The repository follows `repo_hierarchy.txt`.
+This submission records the completed 50-instrument PyTorch / SciPy-Numba port.
 
-The notebook is prepared for a **fresh run on a new GPU computer**. It defaults to `FRESH_MODELS=True`, shows live per-epoch training/validation curves under the training cell, and archives rather than loads older fitted checkpoints. It does not read the older progress notebook. That snapshot, local credentials, data, weights and machine-specific state are excluded from this branch.
+- Searches: 36/36; candidate fits: 1,800/1,800; training epochs: 126,763.
+- CPD outputs: 346,218 per horizon, five horizons.
+- Main exhibits: five test windows, 1995-2019; separately refitted 2020 test excluded.
+- One search repetition; repeated-seed robustness is not claimed.
 
-Prior partial experiments and the prepared 50-instrument data remain local. The new fresh experiment has not yet run to completion; no final result or published Sharpe match is claimed. Completed fresh experiments will be evidenced by `report/execution_manifest.json` (36 searches and 1,800 candidates), not by this status document.
+Gross Sharpe is 1.815 for LSTM and 1.602 for validation-selected CPD. Published references are 1.62 and 2.16. See report/RESULTS.md for interpretation and limitations.
 
-See [GPU_RUN.md](GPU_RUN.md) for a new machine. All missing licensed data and features can be acquired/computed after environment setup and WRDS authorization. CPU/Metal/CUDA device selection is automatic. The submission includes essential numerical/chronology/cost checks; the new-machine CUDA hardware and the entire fresh study have not been tested here.
+The final notebook displays committed aggregate artifacts by default. A new experiment requires explicit opt-in, an authorized WRDS account and runtime dependencies. Later author-framework experiments are outside this submission. The manifest and per-search inventory establish completion.

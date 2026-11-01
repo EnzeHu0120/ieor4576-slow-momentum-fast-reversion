@@ -15,6 +15,7 @@ from torch import nn
 from .paths import ROOT, configuration
 from .dataset import FEATURE_COLUMNS
 from .training_events import emit
+from .checkpoint_io import replace_checkpoint
 
 def resolve_device(requested='auto'):
     if requested=='auto':
@@ -135,7 +136,7 @@ def train_trial(arrays,hp,cfg,seed,checkpoint):
             temporary=checkpoint.with_suffix(".pt.tmp")
             torch.save({"state_dict":{k:v.detach().cpu() for k,v in model.state_dict().items()},"hp":hp,"epoch":epoch+1,
                 "validation_loss":val,"seed":seed,"device_at_fit":str(device)},temporary)
-            temporary.replace(checkpoint)
+            replace_checkpoint(temporary,checkpoint)
         else:wait+=1
         emit('epoch',checkpoint,**history[-1],best_validation_loss=best,device=str(device))
         if (epoch+1)%25==0:print("epoch",epoch+1,"val",round(val,3),"seconds",round(time.monotonic()-start),flush=True)
