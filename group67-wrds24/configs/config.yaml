@@ -1,0 +1,16 @@
+{
+  "seed": 67,
+  "sequence_length": 63,
+  "cpd_lookbacks": [10, 21, 63, 126, 252],
+  "trials_per_variant": 50,
+  "max_epochs": 300,
+  "patience": 25,
+  "device": "gpu",
+  "gp_workers": 8,
+  "sample": {
+    "train_end": "2016-12-31",
+    "validation_end": "2018-12-31",
+    "test_end": "2020-12-31"
+  },
+  "universe_codes": [2338, 2374, 2433, 3801, 4122, 4199, 6409, 6682, 8634, 9017, 9020, 9603, 9896, 10272, 11284, 12290, 21630, 22726, 22970, 22990, 23134, 23151, 23163, 23253]
+}

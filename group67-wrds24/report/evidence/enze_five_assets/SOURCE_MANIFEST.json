@@ -1,0 +1,46 @@
+{
+  "repository": "EnzeHu0120/ieor4576-slow-momentum-fast-reversion",
+  "branch_at_inspection": "Enze-5-assets-reproduction",
+  "commit": "f88874663ba3641f06c867c45446b1c4e5faf93e",
+  "commit_url": "https://github.com/EnzeHu0120/ieor4576-slow-momentum-fast-reversion/commit/f88874663ba3641f06c867c45446b1c4e5faf93e",
+  "sources": [
+    {
+      "repository_path": "report/RESULTS.md",
+      "included_file": "RESULTS.md",
+      "included_utf8_sha256": "2e6a420c134c455ef84d8287550fbc3f9586cec99e2e1fa7a65d56ce5144e3c2"
+    },
+    {
+      "repository_path": "report/paper_reference_comparison.csv",
+      "included_file": "paper_reference_comparison.csv",
+      "included_utf8_sha256": "2e4dbbb6be32c26f5422b615737c3face4f3c205d0b8013f70b42c02301f001a"
+    },
+    {
+      "repository_path": "report/tables/replication/exhibits_by_fold.csv",
+      "included_file": "exhibits_by_fold.csv",
+      "included_utf8_sha256": "291a6b25ed17a2495cf7d801cec1e5f98e5cbcec3a657ea27265da53155b0d5a"
+    },
+    {
+      "repository_path": "report/tables/replication/selected_cpd_windows.csv",
+      "included_file": "selected_cpd_windows.csv",
+      "included_utf8_sha256": "10b15a7b938928d5c1bc0e3003931d45eede5891002f11cafd11b131ba0934eb"
+    },
+    {
+      "repository_path": "configs/author_five_assets.yaml",
+      "included_file": "author_five_assets.yaml",
+      "included_utf8_sha256": "208c8702f31b35b129b7bcdbe0013c24c1e043765d24b2d682aa3c03eda5e43a"
+    },
+    {
+      "repository_path": "configs/universe.csv",
+      "included_file": "universe.csv",
+      "included_utf8_sha256": "8b90874b6290c6f74c29c0cd2d5196d1f196b00d370b056ab99ffe744e1b400a"
+    },
+    {
+      "repository_path": "docs/REPLICATION.md",
+      "included_file": "REPLICATION.md",
+      "included_utf8_sha256": "d85eda52cea3a5a3a539a2ac98293bf1dc2d4bbdaf7609b5461873e8d69cb1de"
+    }
+  ],
+  "copy_convention": "UTF-8 text evidence; line endings normalized when copied. Numeric CSV values were not changed.",
+  "verification_scope": "Committed aggregate metrics, fold means, selected windows and protocol reviewed. No independent five-asset raw-position replay or re-training.",
+  "controlled_market_count_experiment": false
+}

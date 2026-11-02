@@ -1,0 +1,37 @@
+{
+  "status": "PASSED",
+  "source_archive_sha256": "776e8ce75725c8230f6f45982444a6111b5d16d8307789232e71ba2e06686613",
+  "gp_windows": 279195,
+  "gp_features": 55839,
+  "causal_failed_fit_fills": 154,
+  "failed_fit_fraction": 0.0005515858092014542,
+  "sample_numeric_gp_likelihood_reconstructions": 465,
+  "sample_gp_score_reconstruction_max_error": 2.668352205859037e-10,
+  "fitted_parameters_refitted": false,
+  "all_available_test_prediction_rows": 12162,
+  "retained_common_asset_rows": 11376,
+  "common_intervals": 474,
+  "position_replay_max_errors": {
+    "lstm": 2.9786682120835906e-08,
+    "lstm_cpd": 2.980117796980153e-08
+  },
+  "all_checkpoint_hashes_match_original_run": true,
+  "turnover_recomputation_max_error": 4.440892098500626e-16,
+  "net_return_recomputation_max_error": 1.9092800257469733e-16,
+  "all_gross_scaled_and_cost_metric_recomputation_max_error": 1.1901590823981678e-13,
+  "cpd_vs_long_only_sharpe_cost_crossover_bps": 0.5468237802365139,
+  "cpd_zero_sharpe_cost_bps": 4.93070203722809,
+  "main_findings": [
+    "Validation selected 252-day CPD, not selected using the test results.",
+    "Gross CPD Sharpe is 1.880281 versus ordinary LSTM -0.348419 and long-only 1.682256.",
+    "At 1 bps one-way cost CPD Sharpe falls to 1.499530, below long-only 1.663770.",
+    "CPD 21-day OOS Sharpe is -0.509874; CPD is not uniformly helpful across lookbacks.",
+    "All 15% ex-post standardized series preserve Sharpe; this is presentation scaling, not causal risk targeting."
+  ],
+  "limits": [
+    "Only sampled GP likelihoods were reconstructed; all source dates and 154 past-only fills were checked.",
+    "No new training or independent GPU hardware inference was performed here; uploaded GPU replay outputs agree with earlier saved outputs.",
+    "All performance and cost results remain conditional on 474 common intervals, not full-calendar executable returns.",
+    "Single fixed split, seed, and WRDS 24-series universe; no claim of statistical or universal CPD superiority."
+  ]
+}

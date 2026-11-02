@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "group67-wrds24"
+version = "0.1.0"
+description = "Audited WRDS 24-series adaptation of Slow Momentum with Fast Reversion"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.26.4,<3", "pandas>=1.5.3,<3", "scipy>=1.15.3,<2", "matplotlib>=3.8.4,<4"]
+
+[project.optional-dependencies]
+pdf = ["reportlab>=4,<5", "pypdf>=5,<7"]
+dev = ["pytest>=7", "ruff"]
+reproduce = ["numpy==1.26.4", "pandas==1.5.3", "scipy==1.15.3", "scikit-learn==1.3.2", "matplotlib==3.8.4", "tensorflow[and-cuda]==2.21.0", "tf-keras==2.21.0", "tensorflow-probability==0.25.0", "gpflow==2.2.1", "keras-tuner==1.3.5", "empyrical==0.5.5", "setuptools==80.9.0", "tensorboard==2.20.0"]
+
+[project.scripts]
+group67-reproduce = "project.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+project = ["author_code/*.py", "author_code/mom_trans/*.py", "author_code/settings/*.py", "author_code/LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
