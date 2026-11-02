@@ -1,0 +1,4 @@
+study,markets,lstm_sharpe,selected_cpd_sharpe,test_period,aggregation,data_construction,cpd_minus_lstm_sharpe,controlled_universe_size_experiment
+Single-sequence development pilot,1,1.1205367305219573,1.0468816797871705,2019-2020,One 505-observation sequence,WRDS code 1825; instrument/roll identity unverified,-0.07365505073478684,False
+Enze five-asset author-source study,5,0.5889242419736435,0.5182497862589879,1995-2020,Unweighted mean of five test-window Sharpe ratios,WRDS individual contracts; same-held-contract returns and explicit rolls,-0.07067445571465558,False
+Current 24-market adaptation,24,-0.3484189590856959,1.880280738167983,2019-2020,One sequence of 474 retained common intervals,WRDS vendor continuous price indices; provisional underlying mappings,2.228699697253679,False

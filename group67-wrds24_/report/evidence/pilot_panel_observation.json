@@ -1,0 +1,71 @@
+{
+  "status": "exploratory_confounded_observation_not_causal_evidence",
+  "hypothesis_confirmed": false,
+  "controlled_universe_size_experiments_performed": false,
+  "pilot_source_archive": "paper67_cpd_full_results.zip",
+  "pilot_source_archive_sha256": "ea4d48555ed5c443ab61602f0f8f16c298cf2d742d5361fed958335aa7bb3135",
+  "pilot_metric_member": "cpd_lstm/comparison_2019_2020.csv",
+  "pilot_selection_member": "cpd_lstm/best_hyperparameters.json",
+  "pilot_source_code": 1825,
+  "pilot_instrument_and_roll_identity_verified": false,
+  "pilot_selected_checkpoint": {
+    "trial": 168,
+    "status": "completed",
+    "seed": 18229,
+    "hyperparameters": {
+      "hidden_layer_size": 40,
+      "dropout_rate": 0.3,
+      "max_gradient_norm": 0.01,
+      "learning_rate": 0.1,
+      "batch_size": 64,
+      "cpd_lookback": 126
+    },
+    "validation_sharpe": 1.6065262621193033,
+    "best_epoch": 2,
+    "epochs_ran": 27,
+    "network_candidate_index": 18,
+    "initial_validation_sharpe": 0.9964293991913642,
+    "optimizer_steps_in_best_checkpoint": 2,
+    "training_sequences": 25,
+    "batches_per_epoch": 1
+  },
+  "panel_source_archive": "paper67_panel24_supplement_results.zip",
+  "panel_metric_member": "gross_fixed_lookbacks.csv",
+  "observations": [
+    {
+      "experiment": "earlier_single_sequence_pilot",
+      "markets": 1,
+      "retained_intervals": 505,
+      "ordinary_lstm_sharpe": 1.1205367305219573,
+      "selected_cpd_sharpe": 1.0468816797871705,
+      "cpd_minus_lstm_sharpe": -0.07365505073478684,
+      "selected_cpd_lookback": 126
+    },
+    {
+      "experiment": "current_wrds_panel",
+      "markets": 24,
+      "retained_intervals": 474,
+      "ordinary_lstm_sharpe": -0.3484189590856959,
+      "selected_cpd_sharpe": 1.880280738167983,
+      "cpd_minus_lstm_sharpe": 2.228699697253679,
+      "selected_cpd_lookback": 252
+    }
+  ],
+  "confounders": [
+    "instrument identity and asset composition",
+    "preprocessing and history segments",
+    "505 versus 474 comparison intervals",
+    "candidate draws and selected CPD lookback",
+    "25 versus 523 training sequences",
+    "1 versus 5 batches per epoch at selected CPD checkpoint",
+    "single realized seed and period",
+    "ordinary LSTM performance deterioration",
+    "transaction-cost sensitivity"
+  ],
+  "not_claimed": [
+    "monotonic Sharpe improvement as market count increases",
+    "causal effect of universe size",
+    "universal probability of being the best strategy",
+    "optimized asset selection or portfolio weights"
+  ]
+}

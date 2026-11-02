@@ -1,0 +1,10 @@
+{
+  "five_asset_commit": "f88874663ba3641f06c867c45446b1c4e5faf93e",
+  "fold_means_match_committed_summary": true,
+  "five_asset_folds_with_cpd_above_lstm": 3,
+  "five_asset_total_folds": 5,
+  "five_asset_mean_difference": -0.07067445571465558,
+  "evidence_scope": "Checks committed aggregate results; five-asset raw quotes, weights and individual positions were not independently replayed.",
+  "universe_size_causal_effect_established": false,
+  "new_experiments_performed": false
+}
