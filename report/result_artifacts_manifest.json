@@ -1,153 +1,77 @@
 {
-  "implementation": "pytorch_scipy_numba_port",
-  "source_snapshot": "ported_pytorch_scipy_20261031T230722Z",
-  "completed_experiments": 36,
-  "completed_trials": 1800,
-  "completed_epochs": 126763,
+  "protocol": "author_source_wrds_five_assets_v1",
+  "completed_searches": 30,
+  "completed_trials": 1500,
+  "completed_cpd_jobs": 25,
+  "saved_cpd_rows": 192765,
   "files": {
-    "report/tables/extension/break_even_costs.csv": {
-      "bytes": 891,
-      "sha256": "f75d081c5a129ed2b41737653d4eb66ee8a9aadbde31f7cf7c8e6f5ca8cf4f8a"
+    "report/tables/replication/author_transaction_costs.csv": {
+      "bytes": 71409,
+      "sha256": "f2458e00a1ba230bf0790ebc981212ce217546d2664bd00073424f665fda2e53"
     },
-    "report/tables/extension/paired_sharpe_bootstrap.csv": {
-      "bytes": 568,
-      "sha256": "0783f0692a71e652467b0627e87f10841bb239f9d161c2e992ca38db9d9d0ac6"
+    "report/tables/replication/candidate_search_inventory.csv": {
+      "bytes": 266280,
+      "sha256": "8223df0203d1fdc41c9d39fba4d86170dc9b8209948464a5ea925ee3d35d99d5"
     },
-    "report/tables/extension/regime_diagnostics.csv": {
-      "bytes": 4126,
-      "sha256": "c2526d1ae94d20c035c7e05e595fb9ee64266abfad45d19f51990d15418dfb12"
+    "report/tables/replication/data_panel_audit.csv": {
+      "bytes": 727,
+      "sha256": "1f126a99749a8d4cd3a4cd92ab697c0163e2a45cb38131b349d041d0ce4660f8"
     },
-    "report/tables/extension/roll_costs.csv": {
-      "bytes": 67409,
-      "sha256": "a0732c258e5918b22a5ed5bce1c838a45fd4625b0142238f30cb1477b1c77708"
-    },
-    "report/tables/extension/roll_costs_by_fold.csv": {
-      "bytes": 408538,
-      "sha256": "b0036b81628bb061d769e988b08b8aeea345083076075e4504181147605ed4b8"
-    },
-    "report/tables/replication/annual_metrics.csv": {
-      "bytes": 61814,
-      "sha256": "db7cbed304e3527ebda15e691a0cf6b7ee0a5688aefc3580fee0ec2555e212a8"
-    },
-    "report/tables/replication/cpd_diagnostics.csv": {
-      "bytes": 522,
-      "sha256": "e1b11cea779fa47a474dd4dddcc16069af2a2a517ef7516686cbdc223850632d"
-    },
-    "report/tables/replication/data_coverage.csv": {
-      "bytes": 4614,
-      "sha256": "20cfc94703bd81a42fd6e5b6a69c4352aaf949ab794ac82f41887d2ec2fb0415"
+    "report/tables/replication/evaluation_protocol.json": {
+      "bytes": 601,
+      "sha256": "5071fc738150525424eb3cc1637ee854a9347d77fb52e76ae17211c4f0cdf2f6"
     },
     "report/tables/replication/exhibits_by_fold.csv": {
-      "bytes": 28815,
-      "sha256": "42c8a767e64ca7c5a0e43ed6216d265cbfe137d08f78201073f62a145899a16b"
+      "bytes": 11731,
+      "sha256": "148ef93fde9a50004802fec0b8cff247e2468975ad786546e67e035233bfd9a3"
     },
     "report/tables/replication/exhibit_3.csv": {
-      "bytes": 2509,
-      "sha256": "a8c878ba48c1e88198232028adb6002c67494a73286d8bd5b3b269a9b404c305"
+      "bytes": 2380,
+      "sha256": "6d840f09def73125bb727953c86186e2231dcc8d4f57cfd87efcca84f23e0e8c"
     },
     "report/tables/replication/exhibit_4.csv": {
-      "bytes": 2449,
-      "sha256": "c88a198b3f29460ac1ac77717806c3f9fe4805a39036ed891e32c869962d147c"
-    },
-    "report/tables/replication/exhibit_4_linear_display.csv": {
-      "bytes": 2304,
-      "sha256": "0004c74070dcc85bcdf82e262cb81f0efe90f31f691932a071297c9db339b545"
+      "bytes": 2286,
+      "sha256": "b20f78675850e784206cca9b92f4ac2d4c48ea49a0d9fdb590960c9517395b38"
     },
     "report/tables/replication/experiment_inventory.csv": {
-      "bytes": 2618,
-      "sha256": "27002693ccb21fcd5ae9b49af1f51819447150d94f40881fd7281d610af763f4"
+      "bytes": 2066,
+      "sha256": "87ef730bce7aa81d6d157f87265b7a2838a38362a8b8bc22ef3ed701fa99926e"
     },
-    "report/tables/replication/held_price_sanity.csv": {
-      "bytes": 695,
-      "sha256": "f04d46db93fcb073e18e8507b58122bd76899de934f460a1682e89e3751b0a42"
+    "report/tables/replication/feature_revalidation.csv": {
+      "bytes": 1400,
+      "sha256": "a64992a2a4e976fbe207b68c154d4c5ac32d53e8ed16d7c79e1be2421baa08e0"
     },
-    "report/tables/replication/published_comparison.csv": {
-      "bytes": 4079,
-      "sha256": "f448dd8debd961db08738cb43af2f49789b1116339aa6b65bfb615e4742478eb"
+    "report/tables/replication/published_reference.csv": {
+      "bytes": 1754,
+      "sha256": "b7278ea39dc150eefce9f8c54a0fa4777776c89e8abf536bfa754299d3b58e8d"
+    },
+    "report/tables/replication/roll_cost_sensitivity.csv": {
+      "bytes": 83313,
+      "sha256": "953c86c3edb62cf492216336aef378a04bfbe00bedcdb6477e8d73fc6e4b6c10"
+    },
+    "report/tables/replication/runtime_data_manifest.json": {
+      "bytes": 600,
+      "sha256": "5453d2ccbb98e77529f057939148921667efd5cc3cf605fb98c2f1bd9a67ac82"
     },
     "report/tables/replication/selected_cpd_windows.csv": {
-      "bytes": 261,
-      "sha256": "d42f7bc418548d37c07aeff1326813527bdbc0ce46f3a04844749dc682edc219"
+      "bytes": 213,
+      "sha256": "a8eea728be45a4facee413e8659b1d79b07eaf605e17d75b2bf82cd5467dab6e"
     },
-    "report/tables/replication/transaction_costs.csv": {
-      "bytes": 18552,
-      "sha256": "87375a360491d42071374412229bb44dc9bc1e39bdd3d8a17f3be5e0f074dcf0"
+    "report/tables/replication/strict_1995_2019_sensitivity.csv": {
+      "bytes": 2375,
+      "sha256": "def9af79957e8377b5af80231ce5145b27f704b742bf099d56ef506ebaa506f8"
     },
-    "report/tables/replication/transaction_costs_by_fold.csv": {
-      "bytes": 112269,
-      "sha256": "3946f664eca5bd9fdc5ff8cd76b1091a66e70cabd4779d0de508f76d95f33824"
+    "report/figures/replication/fold_comparison.png": {
+      "bytes": 40171,
+      "sha256": "8dcd04d6e5074ccb359054b11bcc4ac501f9d0824d178e28223832b5079d7e0b"
     },
-    "report/tables/replication/volatility_rescaling.csv": {
-      "bytes": 393,
-      "sha256": "817ed46c03e9127327be1343abf85bf879173aefdf49d7092b093550acbc3157"
-    },
-    "report/figures/extension/roll_and_execution_costs.pdf": {
-      "bytes": 34278,
-      "sha256": "329c3f9583758d32ad560613d32870098661b4991555102448949805c95f95ce"
-    },
-    "report/figures/extension/roll_and_execution_costs.png": {
-      "bytes": 194653,
-      "sha256": "f2caa9d088568c5af275abb0b7d3870b2464463d756b02430ff21fce3c47e7f2"
-    },
-    "report/figures/replication/cpd_window_sensitivity.pdf": {
-      "bytes": 26021,
-      "sha256": "607a0ff3c6e3853b700106066feb7fa0e016bc548f46bd853b035d3684324625"
-    },
-    "report/figures/replication/cpd_window_sensitivity.png": {
-      "bytes": 83226,
-      "sha256": "66dc279a8d77207e444b88398076f20d16c8b9e199363235ea9b1536488090b9"
-    },
-    "report/figures/replication/drawdowns.pdf": {
-      "bytes": 266198,
-      "sha256": "a6102cc70bd85d002e4a8b56395ee6703e2fca6ac93a53770f506f502f24f0a1"
-    },
-    "report/figures/replication/drawdowns.png": {
-      "bytes": 213966,
-      "sha256": "588f27792a7d3b3147561eaa387198a4b86a7fd882af2dfd0c029173535e7ad5"
-    },
-    "report/figures/replication/position_diagnostics.pdf": {
-      "bytes": 61859,
-      "sha256": "91b73da4389503ae2a67df6fd42af54dda66b39b51c32c33e11076c283950c71"
-    },
-    "report/figures/replication/position_diagnostics.png": {
-      "bytes": 566790,
-      "sha256": "20f946f0ffe5d94ca74391174a6e909456aec6ca57b36c06e36534b53c9383d9"
-    },
-    "report/figures/replication/published_comparison.pdf": {
-      "bytes": 26450,
-      "sha256": "98e34a901038ea0612b5f24fa0ddaf042e3eab630b6df0782b7f4ff38b8b1026"
-    },
-    "report/figures/replication/published_comparison.png": {
-      "bytes": 66568,
-      "sha256": "17ec30d105e0b8badcae1000684af22308962b4b76730447c099f9ac01a0e1e8"
-    },
-    "report/figures/replication/regime_sensitivity.pdf": {
-      "bytes": 37799,
-      "sha256": "c0e5147c1fa2b28c261c0136bf40cf063f7bb73638805d47e75508b0e9beb722"
-    },
-    "report/figures/replication/regime_sensitivity.png": {
-      "bytes": 150011,
-      "sha256": "14a3700655c562e4f6557be8d41b6710d190471d73b13cf28f899e0a0d82725d"
-    },
-    "report/figures/replication/training_monitor.png": {
-      "bytes": 135686,
-      "sha256": "65ca4ba5b6aa05aeaee18929b5b5de8c92e389f7e4de5152d8f2070055359e5e"
-    },
-    "report/figures/replication/transaction_costs.pdf": {
-      "bytes": 32375,
-      "sha256": "08f31db99ac91c88de44645e37676b030b3c933c9f0353e3c4884005b8438e95"
+    "report/figures/replication/paper_comparison.png": {
+      "bytes": 70385,
+      "sha256": "446117d91d79545d0ef866da99268b20d431767303d0348ea4836fa05abe2560"
     },
     "report/figures/replication/transaction_costs.png": {
-      "bytes": 171567,
-      "sha256": "aa8f9fb5cf0b38aadecd0ada035a8d63d392b16366914313831e1e048b8788ed"
-    },
-    "report/figures/replication/wealth_comparison.pdf": {
-      "bytes": 407634,
-      "sha256": "a2f3af5e27291ad907961f3229657a2453c5ca54ff422b386071f4856ea5d8f2"
-    },
-    "report/figures/replication/wealth_comparison.png": {
-      "bytes": 228507,
-      "sha256": "a56da80cf70518d325e889f39da018b0008c5cc8a0e22dd8a4015bb454c6d86b"
+      "bytes": 98102,
+      "sha256": "8ad8b7364e5df5a5f11da4befdce0ecd61fc0a2ba50feead3475b5ab8eb4749e"
     }
   }
 }

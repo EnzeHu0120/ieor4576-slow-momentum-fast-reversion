@@ -3,3 +3,7 @@
 report/figures/** binary
 # Preserve exact aggregate artifact bytes referenced by the SHA-256 manifest.
 report/tables/** -text
+
+# Keep the pinned upstream and executed adapter bytes portable.
+vendor/author-original/** -text
+src/momentum_lab/author_*.py -text

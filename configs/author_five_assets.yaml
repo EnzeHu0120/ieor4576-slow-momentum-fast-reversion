@@ -1,0 +1,35 @@
+protocol: author_source_wrds_five_assets_v1
+author_commit: e0352cb0bdbf8045accb1bf1a5705ae0cb9ea624
+seed: 67
+start: 1990
+test_boundaries:
+- 1995
+- 2000
+- 2005
+- 2010
+- 2015
+last_test_end: 2021
+cpd_windows:
+- 10
+- 21
+- 63
+- 126
+- 252
+random_search_trials: 50
+max_epochs: 300
+patience: 25
+sequence_length: 63
+train_valid_ratio: 0.9
+evaluate_diversified_val_sharpe: true
+require_gpu: true
+cpd_workers: 4
+model_workers: 1
+data_directory: data/processed/author_five_assets
+results_directory: results/author_five_assets
+report_directory: report/author_five_assets
+tickers:
+- SP
+- TY
+- BN
+- ZG
+- ZU

@@ -1,14 +1,29 @@
-# Executed protocol: PyTorch / SciPy-Numba port
+# Five-asset protocol and runtime
 
+The experiment uses the five instruments in configs/universe.csv and the settings in configs/author_five_assets.yaml. configs/author_native.yaml is an identical default alias for this five-asset setup. It does not define another universe.
 
-1. Acquire the 50-entry Appendix A mapping in `configs/universe.csv`, 1990-01-01 through 2020-12-31, using WRDS individual futures contracts. Preserve raw settlements and manifests. Calendar references for GI/ZW/ZZ use the same underlying and delivery month, not final observed dates.
-2. Select the earliest maturity with an observed positive settlement, five business days before notice/last trade. Earn the same contract's next-interval price change. Historical volume/OI absence does not delete valid settlements. Mark missing settlements causally at their last observation and count them explicitly.
-3. Run the preserved author feature construction. Follow source-code 252-day annual returns and MACD (16,48), rather than typographical 256/(16,28) alternatives in the manuscript. The classical MACD position applies the author scale_signal map to the combined trend; neural inputs stay untransformed. Target returns follow author price-index winsorization; raw-return diagnostics are separate.
-4. Fit two GP covariances per asset-date for all five CPD horizons, independently initialized. Use an exact state-space likelihood, 200-iteration L-BFGS-B cap, numerical gradients, bounded log parameters and diagonal jitter. Record convergence flags. Relative location follows author code `(t-c)/l`.
-5. Fit stateless 63-step LSTMs on non-overlapping sequences, per-ticker 90/10 chronological splits, purged labels, pooled Sharpe objective, Adam, input/output dropout, parameter-wise clipping, output max norm, 300-epoch cap and patience 25. 50 distinct seeded random candidates in the main GPU run; the separate earlier CPU profile has three. All architecture families use the same trial schedule and seed.
-6. Test 1995–1999, 2000–2004, 2005–2009, 2010–2014, 2015–2019. Separately refit before 2020 and score 2020. Main exhibits average the first five window metrics. The endpoint differs from possible inclusive readings of the manuscript and is explicit, avoiding overlapping windows.
-7. Select the CPD horizon by pre-test validation loss for each fold. Compare original-style gross returns, then Appendix C turnover costs. Finally examine raw returns, both roll legs, a one-session signal delay, a common 2x exposure cap and paired block-bootstrap intervals.
+Core source: vendor/author-original/, commit e0352cb0bdbf8045accb1bf1a5705ae0cb9ea624. Original files are preserved. API adaptations are in author_compat.py; reusable GPflow graph construction is isolated in author_cpd_runtime.py. Model, loss, kernel, parameter initialization and optimizer settings are retained. Numerical validation and the exact execution identity are under report/.
 
-No paper result is inserted into an experimental output. Published values are isolated in `configs/published_exhibits.csv`. Results are not exact Pinnacle numerical replication, repeated-seed inference, calibrated liquidity costs, or integer-lot capacity estimates. Completed search counts are proven by trial summaries, not inferred from configuration. The executed notebook and manifest identify actual completions.
+Test folds start in 1995, 2000, 2005, 2010 and 2015. End years are exclusive in code; the last ends at 2021. This explicitly includes 2020 and makes the last fold six calendar years. Strict 1995-2019 results are a separate sensitivity. Main metrics are equal means of fold metrics, not a pooled return-series Sharpe. CPD lookbacks are selected by pre-test diversified validation Sharpe, not test Sharpe.
 
-Exhibit 4 follows the supporting author aggregation code: one factor per strategy equals 15% divided by average main-window volatility, then recompute metrics on daily returns. A separate linear-summary diagnostic reproduces the numerical display convention suggested by the rounded published table. Both are explicitly ex-post, not tradable forecasts.
+Each search uses 50 candidates from the author grid, a 63-step stateless LSTM, nonoverlapping training/validation sequences, chronological per-instrument 90/10 splits, Adam, a 300-epoch cap and patience 25. TensorFlow and tuner seeds are 67 + test-start year. There is one search realization.
+
+## Viewing
+
+Run All in report/Paper67_Author_Five_Assets.ipynb reads committed artifacts. RUN_EXPERIMENT defaults to False. No licensed data, model weights, WRDS authentication or GPU is needed for display.
+
+## A new data/model run
+
+Authorized WRDS inputs and a compatible compute environment are required. The recorded GPU environment used WSL2 Ubuntu, Python 3.11, TensorFlow legacy Keras 2.21 and GPflow 2.10. Dependency versions are in configs/author_environment.lock.txt and requirements-author.txt. TensorFlow was a community Blackwell build, not an author-provided binary:
+
+- Release: https://github.com/Syraxius/TensorflowDockerBuilder/releases/tag/v2.21.0-sm120-cuda128-py310-py313
+- Wheel: tensorflow-2.21.0+selfbuild-cp311-cp311-linux_x86_64.whl
+- SHA-256: a2369ec430b3d0b58ab8df2781f250ff17a4ff9ea9f7cc1c8ea2920c3f63c037
+
+The standard CPU/GPU package appropriate to another machine must be validated before training. Install the intended TensorFlow build, then requirements-author.txt. Install this package with --no-deps if using that isolated environment. Configure resources/local/author_runtime.json from configs/author_runtime.example.json, and generate local graph validation evidence with python scripts/validate_author_graphs.py after preparing the data. Local runtime evidence and credentials are not committed. The direct Linux CLI is python scripts/03_replicate.py --config configs/author_five_assets.yaml; the notebook controller can launch the configured WSL runtime after RUN_EXPERIMENT=True.
+
+scripts/01_get_data.py and 02_build_dataset.py prepare the five mapped WRDS inputs using configs/data_wrds.yaml. Runtime inputs and positions are stored under data/ and results/, never in Git. scripts/04_extend.py reevaluates completed model positions; scripts/05_report.py exports aggregate artifacts and regenerates figures. These entry points do not replace the author algorithms.
+
+## Interpretation
+
+This is an author-source five-asset WRDS study with documented compatibility and runtime changes. The original paper's 50 Pinnacle instruments, proprietary roll series, precise random-search draws and historical binary environment are not reproduced. A numerical gap cannot be assigned to any one difference without a matched-input controlled experiment. See report/RESULTS.md.

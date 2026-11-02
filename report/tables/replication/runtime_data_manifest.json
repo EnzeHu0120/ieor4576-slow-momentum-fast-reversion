@@ -1,0 +1,11 @@
+{
+  "files": {
+    "data/processed/author_five_assets/features.parquet": "de8285daeb073c25fd07538338ebe1b6c7f0058d39499f908bd4ce38ec187f7c",
+    "data/processed/author_five_assets/cpd_inputs.parquet": "8440c69b3f7fea55da98313f510c221df7f991ad48ed959be9aab3741b1f74ad",
+    "configs/universe.csv": "ee036776cd551c42e58fb8c4c3a712ed27f4061a3716399e6e8d5d6d145d1689"
+  },
+  "limitations": [
+    "Pinnacle original prices, roll calendar and missing-data masks are unavailable.",
+    "WRDS universe mapping and same-contract return construction are retained; equivalence to Pinnacle is not claimed."
+  ]
+}

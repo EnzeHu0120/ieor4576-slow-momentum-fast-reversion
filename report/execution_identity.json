@@ -1,0 +1,136 @@
+{
+  "fingerprint": "00cbafcb44d4b830c670fa5ba8e320de0ed3549a68a8b4108c8c04eda7032c15",
+  "config": {
+    "protocol": "author_source_wrds_five_assets_v1",
+    "author_commit": "e0352cb0bdbf8045accb1bf1a5705ae0cb9ea624",
+    "seed": 67,
+    "start": 1990,
+    "test_boundaries": [
+      1995,
+      2000,
+      2005,
+      2010,
+      2015
+    ],
+    "last_test_end": 2021,
+    "cpd_windows": [
+      10,
+      21,
+      63,
+      126,
+      252
+    ],
+    "random_search_trials": 50,
+    "max_epochs": 300,
+    "patience": 25,
+    "sequence_length": 63,
+    "train_valid_ratio": 0.9,
+    "evaluate_diversified_val_sharpe": true,
+    "require_gpu": true,
+    "cpd_workers": 4,
+    "model_workers": 1,
+    "data_directory": "data/processed/author_five_assets",
+    "results_directory": "results/author_five_assets",
+    "report_directory": "report/author_five_assets",
+    "tickers": [
+      "SP",
+      "TY",
+      "BN",
+      "ZG",
+      "ZU"
+    ]
+  },
+  "provenance": {
+    "repository": "https://github.com/kieranjwood/trading-momentum-transformer",
+    "commit": "e0352cb0bdbf8045accb1bf1a5705ae0cb9ea624",
+    "files": {
+      ".gitignore": "76c10a3230f1e94637e28660203ca6adc6b406fd68659ffa9ac74ba639eb4e52",
+      "LICENSE": "2862a319be78e316f87769c61808dd57dc909b309e30b1ad1b1d6488714c66e0",
+      "README.md": "a165e24c8e2d7989ef97dfb383977b642ae2f59c9939624432c753728dc87a31",
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/download_quandl_data.py": "d6e858efea1817eef56145dc573764edc972d000af1a6c01782629ae41364942",
+      "data/pull_data.py": "0a5453bac74cdfeea5331a8977d660cb99ac16aff46e1cf3650fd6e5a470ee2e",
+      "examples/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "examples/concurent_cpd_quandl.py": "1ea9b58a0e5195609e40352c34f95643a3143bc117c3fe762e9037b76b1de1b5",
+      "examples/cpd_quandl.py": "c9a0b49cab8233a924d0bbe2f13f2af928afca028f8540cedc98531db776a0f3",
+      "examples/create_features_quandl.py": "8ae9561a5818a998f03ff5695831fab0a0b208320e97eb5a5915e3f486267338",
+      "examples/run_classical_strategies.py": "c50be0c5b9662c271af0a4c7be26125c07d06f6430adc8661226e73c31ec49d9",
+      "examples/run_dmn_experiment.py": "261046c9bbebc82bc99c878341cb1e2ef7623dec5738f16ef7b3e3a405f097f4",
+      "mom_trans/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mom_trans/backtest.py": "8c6337cfcaf664a4923526727c816e0213aa8c04c0c3e722350127f7221fa8b5",
+      "mom_trans/changepoint_detection.py": "0a0f48c6850f7e5821076dd3e4bec7ebf62c8e24e0c59499a93f16f8b8955d6a",
+      "mom_trans/classical_strategies.py": "9a5178680346119e629b1c0c38358eaed5018820beec5f04f685c5c7eec7288a",
+      "mom_trans/data_prep.py": "d74cf0f68597a77362e4572925ca51637a07a038e663cc095e1b33a06dd26458",
+      "mom_trans/deep_momentum_network.py": "b5a28402aa91216ffcb344f3a990c86b586092b64c3e3fa0a965daec90f37cf1",
+      "mom_trans/model_inputs.py": "aba554a62dcbf9b3da1cf9f9175de4ccb017c0814e316d0b12187b533514f5c8",
+      "mom_trans/momentum_transformer.py": "26e2b257586761a985c81bb0130f20489505bc21d7869b82f13f2a1017c45bac",
+      "requirements.txt": "b97b4b1bb43669d00ffdf6a77cd64b994e9bd641c9b00781810f5b81cab3b708",
+      "settings/default.py": "7fa891ddc8356e48827f1472a7718de8764cef8643c65e321874810d514485dd",
+      "settings/fixed_params.py": "ed993191b3f98fb1eb5df4a26bdb368b03fa138200faada2d65c661215580642",
+      "settings/hp_grid.py": "b34212edab4a81731fae44e5faa6f8c7d0d7ba17dd818068722f5ad8bd4e25a4"
+    },
+    "compatibility_edits": {
+      "mom_trans/model_inputs.py": [
+        [
+          "dtype=np.int)",
+          "dtype=int)"
+        ]
+      ],
+      "mom_trans/classical_strategies.py": [
+        [
+          ".fillna(method=\"bfill\")",
+          ".bfill()"
+        ]
+      ],
+      "mom_trans/data_prep.py": [
+        [
+          ".fillna(method=\"ffill\")",
+          ".ffill()"
+        ],
+        [
+          ".index.weekofyear",
+          ".index.isocalendar().week.to_numpy()"
+        ]
+      ],
+      "mom_trans/deep_momentum_network.py": [
+        [
+          "from keras_tuner.tuners.randomsearch import RandomSearch",
+          "from keras_tuner import RandomSearch"
+        ],
+        [
+          "self._get_checkpoint_fname(trial.trial_id, self._reported_step)",
+          "self._get_checkpoint_fname(trial.trial_id)"
+        ],
+        [
+          "self._build_and_fit_model(trial, args, copied_fit_kwargs)",
+          "self._build_and_fit_model(trial, *args, **copied_fit_kwargs)"
+        ],
+        [
+          "kt.engine.tuner_utils.TunerCallback",
+          "__import__(\"keras_tuner.src.engine.tuner_utils\", fromlist=[\"TunerCallback\"]).TunerCallback"
+        ],
+        [
+          "class TunerDiversifiedSharpe(kt.tuners.RandomSearch):",
+          "class TunerDiversifiedSharpe(kt.tuners.RandomSearch):\n    _reported_step = 0"
+        ],
+        [
+          "            max_trials,\n            seed,\n            hyperparameters,\n            tune_new_entries,\n            allow_new_entries,",
+          "            max_trials=max_trials,\n            seed=seed,\n            hyperparameters=hyperparameters,\n            tune_new_entries=tune_new_entries,\n            allow_new_entries=allow_new_entries,"
+        ],
+        [
+          "keras.optimizers.Adam(lr=learning_rate, clipnorm=max_gradient_norm)",
+          "keras.optimizers.legacy.Adam(learning_rate=learning_rate, clipnorm=max_gradient_norm)"
+        ],
+        [
+          "        super(TunerValidationLoss, self).run_trial(trial, *args, **kwargs)",
+          "        return super(TunerValidationLoss, self).run_trial(trial, *args, **kwargs)"
+        ]
+      ]
+    },
+    "runtime_bindings": {
+      "keras": "tf_keras (legacy Keras for both TensorFlow and Keras Tuner)"
+    },
+    "meaning": "Author source with explicit dependency API adaptations; WRDS data adaptation, not exact Pinnacle rerun."
+  }
+}

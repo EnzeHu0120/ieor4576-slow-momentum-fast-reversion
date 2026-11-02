@@ -1,8 +1,8 @@
-"""Construct same-contract futures returns and original author features."""
 from pathlib import Path
-import sys
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-import argparse
+import sys,subprocess
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'src'))
 from momentum_lab.dataset import build
-if __name__=="__main__":
-    p=argparse.ArgumentParser();p.add_argument("--config",default="configs/config.yaml");a=p.parse_args();build(a.config)
+if __name__=='__main__':
+    build('configs/data_wrds.yaml')
+    subprocess.run([sys.executable,str(ROOT/'scripts/prepare_author_features.py')],check=True)

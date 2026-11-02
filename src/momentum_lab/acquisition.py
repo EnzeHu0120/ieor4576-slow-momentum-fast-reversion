@@ -58,6 +58,7 @@ def download(config_path="configs/config.yaml"):
     # Retrieve the vendor's corresponding pit-contract calendars, not inferred
     # final-observation dates, for the exact same contract month and underlying.
     for ticker,code in {"GI":342,"ZW":430,"ZZ":364}.items():
+        if ticker not in set(universe.ticker):continue
         dest=ROOT/f"data/raw/wrds/{ticker}/calendar_reference.parquet"
         dest.parent.mkdir(parents=True,exist_ok=True)
         if not dest.exists():

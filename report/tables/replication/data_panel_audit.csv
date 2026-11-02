@@ -1,0 +1,6 @@
+ticker,first_feature_date,last_feature_date,feature_rows,first_eligible_test_year,description,asset_class,published_first_test,contract_codes,equivalence
+BN,1991-01-03 00:00:00,2020-12-30 00:00:00,7571,1995,British pound composite,FX,1995,2759,CME composite
+SP,1991-01-03 00:00:00,2020-12-30 00:00:00,7562,1995,S&P500 day session,Equities,1995,1382,CME day session
+TY,1991-01-03 00:00:00,2020-12-30 00:00:00,7545,1995,10yr T-note composite,Fixed Income,1995,2682,CBOT composite
+ZG,1991-01-04 00:00:00,2020-12-30 00:00:00,7545,1995,Gold electronic,Commodities,1995,2020,COMEX combined trading session
+ZU,1991-01-03 00:00:00,2020-12-30 00:00:00,7537,1995,Crude oil electronic,Commodities,1995,1986,NYMEX combined trading session

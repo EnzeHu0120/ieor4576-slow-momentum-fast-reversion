@@ -1,12 +1,9 @@
-# Completed experiment status
+# Completed study
 
-This submission records the completed 50-instrument PyTorch / SciPy-Numba port.
+- Instruments: SP, TY, BN, ZG, ZU.
+- CPD jobs: 25/25, 192,765 daily outputs.
+- Searches: 30/30; candidate fits: 1,500/1,500.
+- Gross Sharpe: LSTM 0.589; validation-selected CPD 0.518.
+- Paper reference: LSTM 1.62; optimized CPD 2.16, on a different 50-instrument portfolio.
 
-- Searches: 36/36; candidate fits: 1,800/1,800; training epochs: 126,763.
-- CPD outputs: 346,218 per horizon, five horizons.
-- Main exhibits: five test windows, 1995-2019; separately refitted 2020 test excluded.
-- One search repetition; repeated-seed robustness is not claimed.
-
-Gross Sharpe is 1.815 for LSTM and 1.602 for validation-selected CPD. Published references are 1.62 and 2.16. See report/RESULTS.md for interpretation and limitations.
-
-The final notebook displays committed aggregate artifacts by default. A new experiment requires explicit opt-in, an authorized WRDS account and runtime dependencies. Later author-framework experiments are outside this submission. The manifest and per-search inventory establish completion.
+The final notebook displays the committed results by default. No repeated-seed robustness or exact Pinnacle numerical replication is claimed. Completion and artifact hashes are recorded under report/.

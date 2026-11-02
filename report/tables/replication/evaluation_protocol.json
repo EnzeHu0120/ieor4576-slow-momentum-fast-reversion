@@ -1,0 +1,29 @@
+{
+  "start_inclusive": "1995-01-01",
+  "end_exclusive": "2021-01-01",
+  "test_intervals": [
+    [
+      1995,
+      2000
+    ],
+    [
+      2000,
+      2005
+    ],
+    [
+      2005,
+      2010
+    ],
+    [
+      2010,
+      2015
+    ],
+    [
+      2015,
+      2021
+    ]
+  ],
+  "aggregation": "equal mean of per-fold metrics",
+  "last_fold_note": "End year is exclusive in code. Main full protocol includes all of 2020 in the 2015-start fold (6 calendar years); strict 1995-2019 sensitivity is saved separately.",
+  "costs": "Paper-style costs and professor roll-cost extension are separate tables."
+}

@@ -1,30 +1,15 @@
-PYTHON ?= $(if $(wildcard .venv-replication/bin/python),.venv-replication/bin/python,python3)
-CONFIG ?= configs/config.yaml
-.PHONY: reproduce fresh resume data features models results report test
-
-reproduce:
-	$(PYTHON) scripts/run_all.py --config $(CONFIG)
-
-resume:
-	$(PYTHON) scripts/run_all.py --config $(CONFIG) --prepared-features
-
-fresh:
-	$(PYTHON) scripts/run_all.py --config $(CONFIG) --fresh-models
-
+PYTHON ?= python3
+CONFIG ?= configs/author_five_assets.yaml
+.PHONY: data features reproduce results report test
 data:
 	$(PYTHON) scripts/01_get_data.py
-
 features:
-	$(PYTHON) scripts/02_build_dataset.py --config $(CONFIG)
-
-models:
+	$(PYTHON) scripts/02_build_dataset.py
+reproduce:
 	$(PYTHON) scripts/03_replicate.py --config $(CONFIG)
-
 results:
 	$(PYTHON) scripts/04_extend.py --config $(CONFIG)
-
 report:
-	$(PYTHON) scripts/05_report.py --config $(CONFIG)
-
+	$(PYTHON) scripts/05_report.py
 test:
 	$(PYTHON) -m pytest -q

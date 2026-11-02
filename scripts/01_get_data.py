@@ -1,6 +1,5 @@
-"""Acquire actual WRDS histories using secure libpq authentication."""
 from pathlib import Path
 import sys
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from momentum_lab.acquisition import download
-if __name__=="__main__":download()
+if __name__=='__main__':download('configs/data_wrds.yaml')

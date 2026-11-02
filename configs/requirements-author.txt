@@ -1,0 +1,21 @@
+# Python 3.11, isolated from the PyTorch environment. GPU extra installed in WSL.
+# Install the Blackwell-compatible TensorFlow wheel first (see docs/REPLICATION.md).
+tf-keras==2.21.0
+h5py==3.14.0
+tensorflow-probability==0.25.0
+gpflow==2.10.0
+keras-tuner==1.4.7
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+empyrical==0.5.5
+setuptools==78.1.0
+pyarrow>=16,<24
+matplotlib>=3.8,<3.11
+pyyaml>=6,<7
+filelock>=3.16,<4
+ipykernel>=6,<8
+nbformat>=5.10,<6
+nbclient>=0.10,<0.12
+pytest>=8,<10

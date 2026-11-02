@@ -1,27 +1,24 @@
-Submission layout
+Five-asset study layout
 
-README.md                         Scope, results and run instructions
-pyproject.toml / Makefile          Environment, pipeline and test commands
-UPSTREAM.json                     Author-source provenance
-configs/                          Universe, parameters and published references
-src/momentum_lab/                 Reusable acquisition, modelling and evaluation
-scripts/01_get_data.py             Acquisition entry point
-scripts/02_build_dataset.py        Dataset entry point
-scripts/03_replicate.py            Replication entry point
-scripts/04_extend.py               Cost/execution extension entry point
-scripts/05_report.py               Report-generation entry point
-notebooks/                        Exploration; final submission is under report/
-report/                           Final notebook, reports and evidence manifests
-report/tables/replication/         Aggregate replication results
-report/tables/extension/           Aggregate extension diagnostics
-report/figures/replication/        Replication figures
-report/figures/extension/          Extension figures
-docs/                             Protocol, data decisions, environment and status
-resources/                        Hierarchy and reference documentation
-tests/                            Numerical, chronology, cost and runtime checks
-vendor/                           Preserved author source and licenses
-data/                             Runtime licensed inputs; Git-ignored
-results/                          Runtime checkpoints/intermediates; Git-ignored
+README.md                       Study scope, results and viewing instructions
+pyproject.toml / Makefile        Environment and pipeline commands
+UPSTREAM.json                   Author provenance
+configs/                        Five-instrument mapping, parameters and reference values
+src/momentum_lab/               Reusable data, author adapters, modelling and reporting
+scripts/01_get_data.py           Acquisition
+scripts/02_build_dataset.py      Input preparation
+scripts/03_replicate.py          Author model experiment
+scripts/04_extend.py             Completed-position evaluation and cost sensitivities
+scripts/05_report.py             Aggregate export and figures
+notebooks/                      Exploratory work only
+report/                         Executed final notebook, analysis and evidence
+report/tables/replication/       Aggregate metrics, search records and cost results
+report/figures/replication/      Research figures
+docs/                           Protocol, data decisions and completion status
+resources/                      Hierarchy and references
+tests/                          Numerical and publication checks
+vendor/author-original/         Pinned author source and MIT license
+data/                           Licensed inputs and features; Git-ignored
+results/                        Runtime positions, checkpoints and logs; Git-ignored
 
-Only aggregate research outputs are committed under report/. Credentials,
-licensed observations, fitted weights and local environments are excluded.
+Raw observations, credentials and machine-local environments are not committed.

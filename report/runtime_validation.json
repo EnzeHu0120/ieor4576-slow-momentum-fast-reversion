@@ -1,0 +1,100 @@
+{
+  "author_graph_validation.json": {
+    "validated": true,
+    "records": [
+      {
+        "window": 10,
+        "cases": 3,
+        "author_seconds": 3.1981431249999996,
+        "cached_seconds_including_first_compile": 0.6676754490000008,
+        "max_absolute_difference": 0.0,
+        "compiled_graphs": 2,
+        "peak_rss_mb": 829.55078125
+      },
+      {
+        "window": 21,
+        "cases": 3,
+        "author_seconds": 1.5684702809999997,
+        "cached_seconds_including_first_compile": 0.682104056,
+        "max_absolute_difference": 0.0,
+        "compiled_graphs": 2,
+        "peak_rss_mb": 860.58203125
+      },
+      {
+        "window": 63,
+        "cases": 3,
+        "author_seconds": 1.4366632899999985,
+        "cached_seconds_including_first_compile": 0.7321384389999999,
+        "max_absolute_difference": 0.0,
+        "compiled_graphs": 2,
+        "peak_rss_mb": 900.6875
+      },
+      {
+        "window": 126,
+        "cases": 3,
+        "author_seconds": 1.7647584390000013,
+        "cached_seconds_including_first_compile": 1.0166554919999982,
+        "max_absolute_difference": 0.0,
+        "compiled_graphs": 2,
+        "peak_rss_mb": 954.859375
+      },
+      {
+        "window": 252,
+        "cases": 3,
+        "author_seconds": 3.544936915000001,
+        "cached_seconds_including_first_compile": 3.081247748999999,
+        "max_absolute_difference": 2.802380549837835e-10,
+        "compiled_graphs": 2,
+        "peak_rss_mb": 1024.88671875
+      }
+    ],
+    "runtime_sha256": "6e2398dec2cde3fcb67a8b37efb62242cae315fb19c38f7ec934017074ac5f52"
+  },
+  "author_fast_runtime_validation.json": {
+    "validated": true,
+    "batch_rows": 500,
+    "workers": 4,
+    "records": [
+      {
+        "pid": 442,
+        "result": [
+          "CA",
+          10,
+          "partial"
+        ],
+        "compiled_graphs": 2,
+        "peak_rss_mb": 793.59375
+      },
+      {
+        "pid": 441,
+        "result": [
+          "CC",
+          10,
+          "partial"
+        ],
+        "compiled_graphs": 2,
+        "peak_rss_mb": 792.71484375
+      },
+      {
+        "pid": 437,
+        "result": [
+          "BN",
+          10,
+          "partial"
+        ],
+        "compiled_graphs": 2,
+        "peak_rss_mb": 792.84375
+      },
+      {
+        "pid": 440,
+        "result": [
+          "AN",
+          10,
+          "partial"
+        ],
+        "compiled_graphs": 2,
+        "peak_rss_mb": 791.24609375
+      }
+    ]
+  }
+}

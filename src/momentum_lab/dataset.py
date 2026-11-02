@@ -34,7 +34,7 @@ def author_features():
     Source and MIT license remain unchanged under vendor/. Backfills in the author
     code are restricted to warmup and removed by the 314-observation feature burnin.
     """
-    base = ROOT / "vendor/author-lstm-cpd/mom_trans"
+    base = ROOT / "vendor/author-original/mom_trans"
     pkg = types.ModuleType("mom_trans"); pkg.__path__ = [str(base)]
     sys.modules["mom_trans"] = pkg
     for name in ["classical_strategies", "data_prep"]:

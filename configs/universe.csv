@@ -1,51 +1,6 @@
 ticker,description,asset_class,published_first_test,contract_codes,equivalence
-CC,Cocoa,Commodities,1995,1980,ICE US cocoa
-DA,Milk III composite,Commodities,2000,3255,CME Class III composite
-GI,Goldman Sachs Commodity Index,Commodities,1995,3254,S&P GSCI composite
-JO,Orange juice,Commodities,1995,2036,ICE US FCOJ A
-KC,Coffee,Commodities,1995,2038,ICE US Coffee C
-KW,Kansas City wheat,Commodities,1995,3623,KCBT composite
-LB,Lumber,Commodities,1995,361,CME random length
-NR,Rough rice pit,Commodities,1995,379,Pit series ends before 2020; no fabricated continuation
-SB,Sugar 11,Commodities,1995,2104,ICE US sugar 11
-ZA,Palladium electronic,Commodities,1995,2065,NYMEX combined trading session
-ZC,Corn electronic,Commodities,1995,3247,CBOT composite broader session
-ZF,Feeder cattle electronic,Commodities,1995,3250,CME composite broader session
 ZG,Gold electronic,Commodities,1995,2020,COMEX combined trading session
-ZH,Heating oil electronic,Commodities,1995,2029,NYMEX combined trading session
-ZI,Silver electronic,Commodities,1995,2108,COMEX combined trading session
-ZK,Copper electronic,Commodities,1995,2026,COMEX combined trading session
-ZL,Soybean oil electronic,Commodities,1995,282|456,CBOT pit history with electronic continuation
-ZN,Natural gas electronic,Commodities,1995,2060,NYMEX combined trading session
-ZO,Oats electronic,Commodities,1995,3262,CBOT composite broader session
-ZP,Platinum electronic,Commodities,1995,2074,NYMEX combined trading session
-ZR,Rough rice electronic,Commodities,1995,3268|461,CBOT composite starts later than original
-ZT,Live cattle electronic,Commodities,1995,2675,CME composite broader session
 ZU,Crude oil electronic,Commodities,1995,1986,NYMEX combined trading session
-ZW,Wheat electronic,Commodities,1995,3272,CBOT composite broader session
-ZZ,Lean hogs electronic,Commodities,1995,2676,CME composite broader session
-CA,CAC40 index,Equities,2000,647,Euronext CAC40
-EN,Nasdaq mini,Equities,2005,323,CME E-mini Nasdaq 100
-ER,Russell 2000 mini,Equities,2005,2101|4396,ICE mini with CME RTY continuation; earliest data 2007
-ES,S&P500 mini,Equities,2000,1381,CME E-mini S&P500
-LX,FTSE100,Equities,1995,1691,ICE LIFFE FTSE100
-MD,S&P400 mini,Equities,1995,1361|401,Full size history then E-mini continuation
-SC,S&P500 composite,Equities,2000,3251,CME composite
 SP,S&P500 day session,Equities,1995,1382,CME day session
-XU,Dow Jones Euro Stoxx50,Equities,2005,801,Eurex Euro Stoxx50
-XX,Dow Jones Stoxx50,Equities,2005,1226,Eurex Stoxx50
-YM,Mini Dow Jones,Equities,2005,444,CBOT mini Dow
-DT,Euro Bund,Fixed Income,1995,834,Eurex Bund; history starts 1998
-FB,5yr T-note composite,Fixed Income,1995,2680,CBOT composite
 TY,10yr T-note composite,Fixed Income,1995,2682,CBOT composite
-UB,Euro Bobl,Fixed Income,2005,704,Eurex Bobl
-US,T-bond composite,Fixed Income,1995,3271,CBOT composite
-AN,Australian dollar composite,FX,1995,2744,CME composite
 BN,British pound composite,FX,1995,2759,CME composite
-CN,Canadian dollar composite,FX,1995,2776,CME composite
-DX,US Dollar Index,FX,1995,2000,ICE US Dollar Index
-FN,Euro composite,FX,1995,2683,CME EUR starts 1998; no Deutsche Mark backfill
-JN,Japanese yen composite,FX,1995,2846,CME composite
-MP,Mexican peso,FX,2000,2864,CME composite
-NK,Nikkei index,FX,1995,2873,CME USD Nikkei; Appendix A groups it under FX
-SN,Swiss franc composite,FX,1995,2807,CME composite

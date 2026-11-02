@@ -1,0 +1,5 @@
+{
+  "distribution": "Ubuntu",
+  "user": "root",
+  "python": "/path/to/author-environment/bin/python"
+}

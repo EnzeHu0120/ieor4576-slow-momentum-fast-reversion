@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/kieranjwood/trading-momentum-transformer",
+  "commit": "e0352cb0bdbf8045accb1bf1a5705ae0cb9ea624",
+  "extracted_to": "vendor/author-original",
+  "execution_adapter": "src/momentum_lab/author_compat.py",
+  "original_files_modified": false
+}
