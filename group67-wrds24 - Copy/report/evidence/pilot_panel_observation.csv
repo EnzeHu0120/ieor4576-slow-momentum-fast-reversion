@@ -1,0 +1,3 @@
+experiment,markets,retained_intervals,ordinary_lstm_sharpe,selected_cpd_sharpe,cpd_minus_lstm_sharpe,selected_cpd_lookback
+earlier_single_sequence_pilot,1,505,1.1205367305219573,1.0468816797871705,-0.07365505073478684,126
+current_wrds_panel,24,474,-0.3484189590856959,1.880280738167983,2.228699697253679,252

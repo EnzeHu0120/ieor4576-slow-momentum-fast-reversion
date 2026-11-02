@@ -1,0 +1,7 @@
+ticker,description,asset_class,published_first_test,contract_codes,equivalence
+ZG,Gold electronic,Commodities,1995,2020,COMEX combined trading session
+ZU,Crude oil electronic,Commodities,1995,1986,NYMEX combined trading session
+SP,S&P500 day session,Equities,1995,1382,CME day session
+TY,10yr T-note composite,Fixed Income,1995,2682,CBOT composite
+BN,British pound composite,FX,1995,2759,CME composite
+
